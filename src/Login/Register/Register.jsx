@@ -1,9 +1,13 @@
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthPorviders";
+import Swal from "sweetalert2";
+
+
+
 
 const Register = () => {
   const {signUp, upDateProfile} = useContext(AuthContext);
-  console.log(signUp);
+//   console.log(signUp);
 
   const handleSingUp = (event) => {
     event.preventDefault();
@@ -18,6 +22,12 @@ const Register = () => {
         const singUpUser = createUSer.user;
         upDateProfile(name, photo)
         console.log(singUpUser)
+        Swal.fire({
+            title: 'Success',
+            text: '',
+            icon: 'success',
+            confirmButtonText: 'Done'
+          })
         event.target.reset()
 
     })
