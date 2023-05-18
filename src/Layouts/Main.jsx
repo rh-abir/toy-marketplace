@@ -1,8 +1,11 @@
+import Footer from "../pages/Shared/Footer/Footer";
+import NavBar from "../pages/Shared/NavBar/NavBar";
 
 const Main = () => {
     return (
         <div>
-            <h2>This is Main Layouts</h2>
+            <NavBar></NavBar>
+            <Footer></Footer>
         </div>
     );
 };
