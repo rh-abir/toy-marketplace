@@ -1,19 +1,33 @@
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthPorviders";
+import Swal from "sweetalert2";
 
 const Login = () => {
-  const user = useContext(AuthContext);
-  console.log(user);
+  const { LogIn } = useContext(AuthContext);
+  //   console.log(user);
 
-
-  const handleLogin = event => {
+  const handleLogin = (event) => {
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
-    const password = form.password.value
-    console.log(email, password)
-  }
+    const password = form.password.value;
 
+    LogIn(email, password)
+      .then((logUser) => {
+        const loggedUser = logUser.user;
+        Swal.fire({
+          title: "success",
+          icon: "success",
+          confirmButtonText: "Done",
+        });
+
+        console.log(loggedUser);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+    console.log(email, password);
+  };
 
   return (
     <div>
@@ -26,7 +40,6 @@ const Login = () => {
             </div>
             <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
               <div className="card-body">
-
                 {/* form */}
                 <form onSubmit={handleLogin}>
                   <div className="form-control">
@@ -38,6 +51,7 @@ const Login = () => {
                       name="email"
                       placeholder="email"
                       className="input input-bordered w-full"
+                      required
                     />
                   </div>
                   <div className="form-control">
@@ -48,6 +62,7 @@ const Login = () => {
                       type="password"
                       name="password"
                       placeholder="password"
+                      required
                       className="input input-bordered"
                     />
                     <label className="label">
@@ -57,7 +72,11 @@ const Login = () => {
                     </label>
                   </div>
                   <div className="form-control mt-6">
-                    <input className="btn btn-primary" type="submit" value="Log In" />
+                    <input
+                      className="btn btn-primary"
+                      type="submit"
+                      value="Log In"
+                    />
                   </div>
                 </form>
               </div>
