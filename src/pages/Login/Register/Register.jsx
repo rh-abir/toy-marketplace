@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
-import { AuthContext } from "../../providers/AuthPorviders";
+import { AuthContext } from "../../../providers/AuthPorviders";
 import Swal from "sweetalert2";
+
 
 const Register = () => {
   const { signUp, upDateProfile } = useContext(AuthContext);
@@ -63,6 +64,7 @@ const Register = () => {
                       type="name"
                       name="name"
                       placeholder="name"
+                      
                       className="input input-bordered w-full"
                     />
                   </div>
@@ -74,6 +76,7 @@ const Register = () => {
                       type="email"
                       name="email"
                       placeholder="email"
+                      required
                       className="input input-bordered w-full"
                     />
                   </div>
@@ -87,6 +90,7 @@ const Register = () => {
                       type="password"
                       name="password"
                       placeholder="password"
+                      required
                       className="input input-bordered"
                     />
                   </div>
@@ -100,6 +104,7 @@ const Register = () => {
                       type="text"
                       name="photo"
                       placeholder="photo"
+                      required
                       className="input input-bordered"
                     />
                     <label className="label">
