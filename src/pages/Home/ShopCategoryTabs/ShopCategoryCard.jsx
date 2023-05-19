@@ -6,7 +6,7 @@ const ShopCategoryCard = ({cateoryData}) => {
 
     return (
         <div>
-            <h2>card category page</h2>
+            <h2>card category</h2>
         </div>
     );
 };

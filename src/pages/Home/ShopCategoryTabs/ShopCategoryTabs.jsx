@@ -52,16 +52,44 @@ const ShopCategoryTabs = () => {
           </div>
         </TabPanel>
         <TabPanel>
-          <h2>Unicorn</h2>
+        <div className="flex gap-5">
+            {categoryDatas?.map((cateoryData) => (
+              <ShopCategoryCard
+                key={cateoryData._id}
+                cateoryData={cateoryData}
+              ></ShopCategoryCard>
+            ))}
+          </div>
         </TabPanel>
         <TabPanel>
-          <h2>Teddy Bear</h2>
+        <div className="flex gap-5">
+            {categoryDatas?.map((cateoryData) => (
+              <ShopCategoryCard
+                key={cateoryData._id}
+                cateoryData={cateoryData}
+              ></ShopCategoryCard>
+            ))}
+          </div>
         </TabPanel>
         <TabPanel>
-          <h2>Dog</h2>
+        <div className="flex gap-5">
+            {categoryDatas?.map((cateoryData) => (
+              <ShopCategoryCard
+                key={cateoryData._id}
+                cateoryData={cateoryData}
+              ></ShopCategoryCard>
+            ))}
+          </div>
         </TabPanel>
         <TabPanel>
-          <h2>Hores</h2>
+        <div className="flex gap-5">
+            {categoryDatas?.map((cateoryData) => (
+              <ShopCategoryCard
+                key={cateoryData._id}
+                cateoryData={cateoryData}
+              ></ShopCategoryCard>
+            ))}
+          </div>
         </TabPanel>
       </Tabs>
     </div>
