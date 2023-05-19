@@ -1,11 +1,9 @@
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthPorviders";
+import Swal from "sweetalert2";
 
 const AddToy = () => {
-
-    const {user} = useContext(AuthContext)
-
-    console.log(user)
+  const { user } = useContext(AuthContext);
 
   const handleAddToy = (event) => {
     event.preventDefault();
@@ -16,32 +14,46 @@ const AddToy = () => {
     const sellerEmail = form.email.value;
     const toyName = form.toyname.value;
     const photoUrl = form.photoUrl.value;
-    const select = form.select.value;
+    const category = form.category.value;
     const Price = form.price.value;
     const rating = form.rating.value;
     const quantity = form.quantity.value;
     const description = form.description.value;
 
+    const addTdyInfo = {
+      sellerName,
+      sellerEmail,
+      toyName,
+      photoUrl,
+      category,
+      Price,
+      rating,
+      quantity,
+      description,
+    };
 
+    fetch("http://localhost:5000/animaltoy", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(addTdyInfo),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            title: "success!",
+            text: "",
+            icon: "success",
+            confirmButtonText: "Ok",
+          });
+          event.target.reset();
+        }
+      });
 
-
-    const addTdy = {
-        sellerName, 
-        sellerEmail,
-        toyName,
-        photoUrl,
-        select,
-        Price,
-        rating,
-        quantity,
-        description
-    }
-
-
-
-    console.log(addTdy)
-
-    
+    console.log(addTdyInfo);
   };
 
   return (
@@ -83,6 +95,7 @@ const AddToy = () => {
               type="text"
               placeholder="Toy Name"
               name="toyname"
+              required
               className="input input-bordered"
             />
           </div>
@@ -95,6 +108,7 @@ const AddToy = () => {
               type="url"
               placeholder="Picture URL"
               name="photoUrl"
+              required
               className="input input-bordered"
             />
             <label className="label">
@@ -108,8 +122,8 @@ const AddToy = () => {
             <label className="label">
               <span className="label-text font-bold">Sub-category</span>
             </label>
-            <select name="select" className="input input-bordered">
-              <option disabled selected>
+            <select name="category" required className="input input-bordered">
+              <option disabled defaultValue='teddy bear'>
                 Sellect ...
               </option>
               <option value="teddy bear">teddy bear</option>
@@ -117,8 +131,8 @@ const AddToy = () => {
               <option value="dinosaur">dinosaur</option>
               <option value="dogs">dogs</option>
               <option value="cat">cat</option>
+              <option value="unicorn">unicorn</option>
               <option value="cows">cows</option>
-              
             </select>
           </div>
 
@@ -130,6 +144,7 @@ const AddToy = () => {
               type="text"
               placeholder="$"
               name="price"
+              required
               className="input input-bordered"
             />
           </div>
@@ -139,9 +154,10 @@ const AddToy = () => {
               <span className="label-text font-bold">Rating</span>
             </label>
             <input
-              type="number"
+              type="text"
               placeholder="Rating"
               name="rating"
+              required
               className="input input-bordered"
             />
           </div>
@@ -154,6 +170,7 @@ const AddToy = () => {
               type="number"
               placeholder="Quantity"
               name="quantity"
+              required
               className="input input-bordered"
             />
           </div>
@@ -170,7 +187,6 @@ const AddToy = () => {
           </div>
         </div>
         <div className="form-control mt-6">
-          
           <input className="btn btn-primary" type="submit" value="Add Toy" />
         </div>
       </form>

@@ -10,22 +10,19 @@ const NavBar = () => {
   const navLink = (
     <>
       <li>
-        <a>Item 1</a>
-        <a>Item 1</a>
-        <a>Item 1</a>
+        <Link to="/">Home</Link>
+        <Link to="addtoy">Add Toy</Link>
       </li>
     </>
   );
 
   const handleLogOut = () => {
-    
     logOut()
-    .then(() => {})
-    .catch(error => {
-        console.log(error.message)
-    })
-  }
-
+      .then(() => {})
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
 
   return (
     <div className="navbar bg-red-400 py-4">
@@ -84,7 +81,6 @@ const NavBar = () => {
           </>
         ) : (
           <>
-            {" "}
             <Link to="/login">
               <button className="btn">LogIn</button>
             </Link>

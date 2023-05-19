@@ -12,9 +12,9 @@ const router = createBrowserRouter([
     errorElement: <div>This is error page</div>,
     children: [
       {
-        path: '/',
-        element: <Home></Home>
-      }, 
+        path: "/",
+        element: <Home></Home>,
+      },
       {
         path: "login",
         element: <Login></Login>,
@@ -24,9 +24,9 @@ const router = createBrowserRouter([
         element: <Register></Register>,
       },
       {
-        path: 'addtoy',
-        element: <AddToy></AddToy>        
-      }
+        path: "addtoy",
+        element: <AddToy></AddToy>,
+      },
     ],
   },
   // {
