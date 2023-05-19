@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthPorviders";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const { LogIn } = useContext(AuthContext);
@@ -65,11 +66,7 @@ const Login = () => {
                       required
                       className="input input-bordered"
                     />
-                    <label className="label">
-                      <a href="#" className="label-text-alt link link-hover">
-                        Forgot password?
-                      </a>
-                    </label>
+                    
                   </div>
                   <div className="form-control mt-6">
                     <input
@@ -79,6 +76,11 @@ const Login = () => {
                     />
                   </div>
                 </form>
+                <label className="label">
+                      <p >
+                        New to Spots shop ! <Link className=" link link-hover font-semibold" to='/signup'>SignUp Now</Link> ?
+                      </p>
+                    </label>
               </div>
             </div>
           </div>
