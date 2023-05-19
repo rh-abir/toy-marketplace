@@ -2,6 +2,7 @@ import Rating from "react-rating";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthPorviders";
+import { Link } from "react-router-dom";
 
 const ShopCategoryCard = ({ cateoryData }) => {
 
@@ -10,7 +11,7 @@ const ShopCategoryCard = ({ cateoryData }) => {
   console.log(user)
 
   console.log(cateoryData);
-  const { photoUrl, Price, toyName, rating } = cateoryData;
+  const { photoUrl, Price, toyName, rating, _id} = cateoryData;
 
   return (
     <div>
@@ -32,7 +33,7 @@ const ShopCategoryCard = ({ cateoryData }) => {
             </p>
           </div>
           <div className="card-actions justify-end">
-            <button className="btn btn-primary">View Details</button>
+            <button className="btn btn-primary"><Link to={`toydetails/${_id}`}>View Details</Link></button>
           </div>
         </div>
       </div>
