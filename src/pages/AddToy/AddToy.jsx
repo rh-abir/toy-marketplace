@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthPorviders";
 import Swal from "sweetalert2";
+import useTitle from "../../customHook/useTitle";
 
 const AddToy = () => {
   const { user } = useContext(AuthContext);
@@ -55,6 +56,8 @@ const AddToy = () => {
 
     console.log(addTdyInfo);
   };
+
+  useTitle("AddToy-page");
 
   return (
     <div className="card-body max-w-7xl mx-auto">
@@ -118,7 +121,7 @@ const AddToy = () => {
               <span className="label-text font-bold">Sub-category</span>
             </label>
             <select name="category" required className="input input-bordered">
-              <option disabled defaultValue='teddy bear'>
+              <option disabled defaultValue="teddy bear">
                 Sellect ...
               </option>
               <option value="teddy bear">teddy bear</option>

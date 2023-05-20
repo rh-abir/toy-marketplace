@@ -4,11 +4,18 @@ import Swal from "sweetalert2";
 import Lottie from "lottie-react";
 
 import img from "./login.json";
+import { useLocation, useNavigate } from "react-router-dom";
+import useTitle from "../../../customHook/useTitle";
 
 const Register = () => {
   const { signUp, upDateProfile } = useContext(AuthContext);
   //   console.log(signUp);
   const [error, setError] = useState("");
+
+  const navigate = useNavigate()
+
+  const location = useLocation()
+  console.log(location)
 
   const handleSingUp = (event) => {
     event.preventDefault();
@@ -35,6 +42,7 @@ const Register = () => {
           icon: "success",
           confirmButtonText: "Done",
         });
+        navigate('/')
         event.target.reset();
       })
       .catch((error) => {
@@ -43,6 +51,9 @@ const Register = () => {
 
     console.log(name, email, password, photo);
   };
+
+  useTitle('Register-page')
+
 
   return (
     <div className="bg-base-150 max-w-7xl mx-auto">

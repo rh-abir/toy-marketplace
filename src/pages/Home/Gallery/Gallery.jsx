@@ -1,58 +1,51 @@
-import img1 from "../../../assets/img/gallery-img/gallery1.png";
-import img2 from "../../../assets/img/gallery-img/gallery2.png";
-import img3 from "../../../assets/img/gallery-img/gallery3.png";
-import img4 from "../../../assets/img/gallery-img/gallery4.png";
-import img5 from "../../../assets/img/gallery-img/gallery5.png";
-import img6 from "../../../assets/img/gallery-img/gallery6.png";
-import img8 from "../../../assets/img/gallery-img/gallery8.png";
-
+import img1 from "../../../assets/img/gallery-img/gallery1.jpg";
+import img2 from "../../../assets/img/gallery-img/gallery2.jpg";
+import img3 from "../../../assets/img/gallery-img/gallery3.jpg";
+import img4 from "../../../assets/img/gallery-img/gallery4.jpg";
+import img5 from "../../../assets/img/gallery-img/gallery5.jpg";
+import img6 from "../../../assets/img/gallery-img/gallery6.jpg";
+import img7 from "../../../assets/img/gallery-img/gallery7.jpg";
+import img8 from "../../../assets/img/gallery-img/gallery8.jpg";
+import img9 from "../../../assets/img/gallery-img/gallery9.jpg";
+import img10 from "../../../assets/img/gallery-img/gallery10.jpg";
 const Gallery = () => {
   return (
-    <div className="max-w-7xl mx-auto my-20">
-      <div className="text-center py-10">
-        <h2 className="text-4xl font-bold mb-1">Featured Gallery</h2>
-        <p>Add featured products to weekly lineup</p>
-      </div>
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
-        <div className="card card-compact w-full bg-base-100 shadow-xl">
-          <figure>
-          <img src={img1} className="w-[100%]" alt="" />
-          </figure>
+    <div className="max-w-7xl mx-auto">
+      <h2>This is Gallery</h2>
+      <div className="grid grid-cols-2 gap-5">
+        <div className="">
+          <img className="rounded-2xl w-[100%]" src={img3} alt="" />
         </div>
-        <div className="card card-compact w-full bg-base-100 shadow-xl">
-          <figure>
-          <img src={img2} className="w-[100%]" alt="" />
-          </figure>
+        <div className="grid grid-cols-2 gap-5">
+          <div>
+            <img className="w-[100%] " src={img2} alt="" />
+          </div>
+          <div>
+            <img className="w-[100%]" src={img1} alt="" />
+          </div>
+          <div>
+            <img className="w-[100%]" src={img4} alt="" />
+          </div>
+          <div>
+            <img className="w-[100%]" src={img5} alt="" />
+          </div>
         </div>
-        <div className="card card-compact w-full bg-base-100 shadow-xl">
-          <figure>
-          <img src={img3} className="w-[100%]" alt="" />
-          </figure>
+        <div className="grid grid-cols-2">
+          <div>
+            <img className="w-[100%]" src={img6} alt="" />
+          </div>
+          <div>
+            <img className="w-[100%]" src={img7} alt="" />
+          </div>
+          <div>
+            <img className="w-[100%]" src={img8} alt="" />
+          </div>
+          <div>
+            <img className="w-[100%]" src={img9} alt="" />
+          </div>
         </div>
-        <div className="card card-compact w-full bg-base-100 shadow-xl">
-          <figure>
-          <img src={img4} className="w-[100%]" alt="" />
-          </figure>
-        </div>
-        <div className="card card-compact w-full bg-base-100 shadow-xl">
-          <figure>
-          <img src={img5} className="w-[100%]" alt="" />
-          </figure>
-        </div>
-        <div className="card card-compact w-full bg-base-100 shadow-xl">
-          <figure>
-          <img src={img6} className="w-[100%]" alt="" />
-          </figure>
-        </div>
-        <div className="card card-compact w-full bg-base-100 shadow-xl">
-          <figure>
-          <img src={img6} alt="" className="w-[100%]"/>
-          </figure>
-        </div>
-        <div className="card card-compact w-full bg-base-100 shadow-xl">
-          <figure>
-          <img className="w-[100%]" src={img8} alt="" />
-          </figure>
+        <div>
+          <img className="rounded-2xl w-[100%]" src={img10} alt="" />
         </div>
       </div>
     </div>

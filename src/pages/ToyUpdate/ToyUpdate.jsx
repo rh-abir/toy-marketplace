@@ -1,10 +1,9 @@
 import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
+import useTitle from "../../customHook/useTitle";
 
 const ToyUpdate = () => {
-
-
-    const {id} = useParams();
+  const { id } = useParams();
 
   const handleToyUpdate = (event) => {
     event.preventDefault();
@@ -21,29 +20,28 @@ const ToyUpdate = () => {
     };
 
     fetch(`http://localhost:5000/update/${id}`, {
-        method: "PUT",
-        headers: {
-            'content-type' : 'application/json'
-        },
-        body: JSON.stringify(updateToyInfo)
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(updateToyInfo),
     })
-    .then(res => res.json())
-    .then(data => {
-        console.log(data)
-        if(data.modifiedCount > 0){
-            Swal.fire({
-                title: "Updated!",
-                text: "",
-                icon: "success",
-                confirmButtonText: "Ok",
-              });
-              event.target.reset();
-
-
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.modifiedCount > 0) {
+          Swal.fire({
+            title: "Updated!",
+            text: "",
+            icon: "success",
+            confirmButtonText: "Ok",
+          });
+          event.target.reset();
         }
-    })
-
+      });
   };
+
+  useTitle("ToyUpdate-page");
 
   return (
     <div className="card-body max-w-7xl mx-auto">

@@ -4,15 +4,22 @@ import loginImg from "./login.json";
 import Lottie from "lottie-react";
 import Swal from "sweetalert2";
 
-import img1 from '../../../assets/img/login/google.png'
-import img2 from '../../../assets/img/login/github.png'
-import { Link } from "react-router-dom";
-
+import img1 from "../../../assets/img/login/google.png";
+import img2 from "../../../assets/img/login/github.png";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import useTitle from "../../../customHook/useTitle";
 
 const Login = () => {
   const { LogIn, googlLogin, githubLogin } = useContext(AuthContext);
   //   console.log(signUp);
   const [error, setError] = useState("");
+
+  const navigate = useNavigate();
+
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+
+  console.log(location);
 
   const handleLogIn = (event) => {
     event.preventDefault();
@@ -25,16 +32,16 @@ const Login = () => {
     LogIn(email, password)
       .then((logUser) => {
         const loggedUser = logUser.user;
-        console.log(loggedUser);
+        // console.log(loggedUser);
 
-        if(loggedUser){
+        if (loggedUser) {
           Swal.fire({
-            icon: 'success',
-            title: 'success',
-          })
-          event.target.reset()
+            icon: "success",
+            title: "success",
+          });
+          event.target.reset();
+          navigate(from, { replace: true });
         }
-
       })
       .catch((error) => {
         if (error.code == "auth/wrong-password") {
@@ -51,42 +58,42 @@ const Login = () => {
 
   const handleGoogleLogin = () => {
     googlLogin()
-    .then(result => {
-      const loggedUser = result.user;
-      if(loggedUser){
-        Swal.fire({
-          icon: 'success',
-          title: 'success',
-        })
-      }
-      
-    })
-    .catch(error => {
-      console.log(error.message)
-    })
-  }
+      .then((result) => {
+        const loggedUser = result.user;
+        if (loggedUser) {
+          Swal.fire({
+            icon: "success",
+            title: "success",
+          });
+          navigate(from, { replace: true });
+        }
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
   const handleGithubLogin = () => {
     githubLogin()
-    .then(result => {
-      const loggedUser = result.user;
-      if(loggedUser){
-        Swal.fire({
-          icon: 'success',
-          title: 'success',
-        })
-      }
-      
-    })
-    .catch(error => {
-      console.log(error.message)
-    })
-  }
+      .then((result) => {
+        const loggedUser = result.user;
+        if (loggedUser) {
+          Swal.fire({
+            icon: "success",
+            title: "success",
+          });
+          navigate(from, { replace: true });
+        }
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
 
-
+  useTitle("Login-page");
 
   return (
     <div className="bg-base-150 max-w-7xl mx-auto">
-        <h1 className="text-5xl text-center font-bold mt-20">Login now!</h1>
+      <h1 className="text-5xl text-center font-bold mt-20">Login now!</h1>
       <div>
         <div className="hero  min-h-full">
           <div className="hero-content flex-row">
@@ -135,20 +142,33 @@ const Login = () => {
                   </div>
                 </form>
 
-                <p className="text-center font-semibold">Create An new Account? <Link to='/signup' className="text-blue-600">Click here</Link> </p>
-
+                <p className="text-center font-semibold">
+                  Create An new Account?{" "}
+                  <Link to="/signup" className="text-blue-600">
+                    Click here
+                  </Link>{" "}
+                </p>
 
                 <div className="divider">OR</div>
                 {/* social login  */}
                 <div className="space-y-3">
-                    <div>
-                      <img onClick={handleGoogleLogin} className="cursor-pointer h-[50px] w-[100%]" src={img1} alt="" />
-                    </div>
-                    <div>
-                      <img onClick={handleGithubLogin} className="cursor-pointer" src={img2} alt="" />
-                    </div>
+                  <div>
+                    <img
+                      onClick={handleGoogleLogin}
+                      className="cursor-pointer h-[50px] w-[100%]"
+                      src={img1}
+                      alt=""
+                    />
+                  </div>
+                  <div>
+                    <img
+                      onClick={handleGithubLogin}
+                      className="cursor-pointer"
+                      src={img2}
+                      alt=""
+                    />
+                  </div>
                 </div>
-
               </div>
             </div>
           </div>

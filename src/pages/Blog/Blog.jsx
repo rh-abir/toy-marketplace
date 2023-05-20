@@ -1,7 +1,12 @@
 import React from "react";
 import Banners from "../Shared/Banners/Banners";
+import useTitle from "../../customHook/useTitle";
 
 const Blog = () => {
+
+  useTitle('Blog-page')
+
+
   return (
     <div className="mb-20">
         <Banners></Banners>

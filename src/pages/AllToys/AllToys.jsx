@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AllToyDetails from "../AllToyDetails/AllToyDetails";
 import Banners from "../Shared/Banners/Banners";
+import useTitle from "../../customHook/useTitle";
 
 const AllToys = () => {
   const [alltoys, setAlltoys] = useState([]);
@@ -17,31 +18,24 @@ const AllToys = () => {
       });
   }, []);
 
-// toySearchByName
+  // toySearchByName
 
+  const [searchText, setSearchText] = useState("");
 
-const [searchText, setSearchText] = useState('')
-
-
-  const handleSearch = ()=> {
-
+  const handleSearch = () => {
     fetch(`http://localhost:5000/toySearchByName/${searchText}`)
-    .then(res => res.json())
-    .then(data => {
-        console.log(data)
-        setAlltoys(data)
-    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setAlltoys(data);
+      });
+  };
 
-  }
-
-
-
-
-
+  useTitle("Alltoy-page");
 
   return (
     <div className="">
-        <Banners></Banners>
+      <Banners></Banners>
       <div className="form-control">
         <div className="input-group flex items-center justify-center">
           <input
