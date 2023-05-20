@@ -1,11 +1,19 @@
+import { useContext } from "react";
+import { AuthContext } from "../providers/AuthPorviders";
+import { Navigate } from "react-router-dom";
 
+const PrivateRoute = ({ children }) => {
+  const { user, loading } = useContext(AuthContext);
 
-const PrivateRoute = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+  if (loading) {
+    return <progress className="progress w-56 mx-auto block"></progress>;
+  }
+
+  if (user) {
+    return children;
+  }
+
+  return <Navigate to='/login' replace = {true}></Navigate>;
 };
 
 export default PrivateRoute;
