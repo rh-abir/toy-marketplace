@@ -14,31 +14,43 @@ const NavBar = () => {
       <li className="font-bold">
         <NavLink
           to="/"
-          className={({ isActive }) => (isActive ? "text-red-600" : "")}
+          className={({ isActive }) => (isActive ? "text-blue-600" : "")}
         >
           Home
         </NavLink>
       </li>
+
       <li className="font-bold">
+        <NavLink
+          to="alltoys"
+          className={({ isActive }) => (isActive ? "text-blue-600" : "")}
+        >
+          All Toys
+        </NavLink>
+      </li>
+
+      {user && <li className="font-bold">
         <NavLink
           to="addtoy"
-          className={({ isActive }) => (isActive ? "text-red-600" : "")}
+          className={({ isActive }) => (isActive ? "text-blue-600" : "")}
         >
-          Add Toy
+          Add A Toy
         </NavLink>
-      </li>
-      <li className="font-bold">
+      </li>}
+
+      {user && <li className="font-bold">
         <NavLink
           to="mytoy"
-          className={({ isActive }) => (isActive ? "text-red-600" : "")}
+          className={({ isActive }) => (isActive ? "text-blue-600" : "")}
         >
-          My Toy
+          My Toys
         </NavLink>
-      </li>
+      </li>}
+
       <li className="font-bold">
         <NavLink
           to="blog"
-          className={({ isActive }) => (isActive ? "text-red-600" : "")}
+          className={({ isActive }) => (isActive ? "text-blue-600" : "")}
         >
           Blog
         </NavLink>
@@ -113,7 +125,7 @@ const NavBar = () => {
           ) : (
             <>
               <Link to="/login">
-                <button className="btn">LogIn</button>
+                <button className="btn btn-primary">Log In</button>
               </Link>
             </>
           )}

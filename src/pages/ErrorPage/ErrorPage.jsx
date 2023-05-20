@@ -7,7 +7,7 @@ const ErrorPage = () => {
       <div className="flex mt-52 items-center justify-center">
         <img className="w-[400px]" src={img} alt="" />
       </div>
-      <button className="btn mx-auto block"><Link to='/'>Back to Home</Link></button>
+      <button className="btn btn-primary mx-auto block"><Link to='/'>Back to Home</Link></button>
     </div>
   );
 };

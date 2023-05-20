@@ -1,8 +1,16 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../../providers/AuthPorviders";
+import loginImg from "./login.json";
+import Lottie from "lottie-react";
+import Swal from "sweetalert2";
+
+import img1 from '../../../assets/img/login/google.png'
+import img2 from '../../../assets/img/login/github.png'
+import { Link } from "react-router-dom";
+
 
 const Login = () => {
-  const { LogIn } = useContext(AuthContext);
+  const { LogIn, googlLogin, githubLogin } = useContext(AuthContext);
   //   console.log(signUp);
   const [error, setError] = useState("");
 
@@ -18,6 +26,15 @@ const Login = () => {
       .then((logUser) => {
         const loggedUser = logUser.user;
         console.log(loggedUser);
+
+        if(loggedUser){
+          Swal.fire({
+            icon: 'success',
+            title: 'success',
+          })
+          event.target.reset()
+        }
+
       })
       .catch((error) => {
         if (error.code == "auth/wrong-password") {
@@ -32,14 +49,49 @@ const Login = () => {
     console.log(email, password);
   };
 
+  const handleGoogleLogin = () => {
+    googlLogin()
+    .then(result => {
+      const loggedUser = result.user;
+      if(loggedUser){
+        Swal.fire({
+          icon: 'success',
+          title: 'success',
+        })
+      }
+      
+    })
+    .catch(error => {
+      console.log(error.message)
+    })
+  }
+  const handleGithubLogin = () => {
+    githubLogin()
+    .then(result => {
+      const loggedUser = result.user;
+      if(loggedUser){
+        Swal.fire({
+          icon: 'success',
+          title: 'success',
+        })
+      }
+      
+    })
+    .catch(error => {
+      console.log(error.message)
+    })
+  }
+
+
+
   return (
-    <div>
-      <h2>This is Login page</h2>
+    <div className="bg-base-150 max-w-7xl mx-auto">
+        <h1 className="text-5xl text-center font-bold mt-20">Login now!</h1>
       <div>
-        <div className="hero min-h-screen bg-base-200">
-          <div className="hero-content flex-col">
+        <div className="hero  min-h-full">
+          <div className="hero-content flex-row">
             <div className="text-center lg:text-left">
-              <h1 className="text-5xl font-bold">Login now!</h1>
+              <Lottie animationData={loginImg}></Lottie>
             </div>
             <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
               <div className="card-body">
@@ -82,6 +134,21 @@ const Login = () => {
                     />
                   </div>
                 </form>
+
+                <p className="text-center font-semibold">Create An new Account? <Link to='/signup' className="text-blue-600">Click here</Link> </p>
+
+
+                <div className="divider">OR</div>
+                {/* social login  */}
+                <div className="space-y-3">
+                    <div>
+                      <img onClick={handleGoogleLogin} className="cursor-pointer h-[50px] w-[100%]" src={img1} alt="" />
+                    </div>
+                    <div>
+                      <img onClick={handleGithubLogin} className="cursor-pointer" src={img2} alt="" />
+                    </div>
+                </div>
+
               </div>
             </div>
           </div>
