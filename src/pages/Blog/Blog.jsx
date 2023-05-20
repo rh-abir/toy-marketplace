@@ -3,7 +3,7 @@ import Banners from "../Shared/Banners/Banners";
 
 const Blog = () => {
   return (
-    <div>
+    <div className="mb-20">
         <Banners></Banners>
       <div className="w-2/3 mx-auto space-y-5">
         <div

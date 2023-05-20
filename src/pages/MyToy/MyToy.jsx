@@ -63,7 +63,6 @@ const MyToy = () => {
 
   return (
     <div className="max-w-7xl mx-auto">
-      <h2>This is my toy page</h2>
       <div className="overflow-x-auto w-full">
         <table className="table w-full">
           <tbody>
