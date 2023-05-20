@@ -17,6 +17,28 @@ const AllToys = () => {
       });
   }, []);
 
+// toySearchByName
+
+
+const [searchText, setSearchText] = useState('')
+
+
+  const handleSearch = ()=> {
+
+    fetch(`http://localhost:5000/toySearchByName/${searchText}`)
+    .then(res => res.json())
+    .then(data => {
+        console.log(data)
+        setAlltoys(data)
+    })
+
+  }
+
+
+
+
+
+
   return (
     <div className="">
         <Banners></Banners>
@@ -26,8 +48,9 @@ const AllToys = () => {
             type="text"
             placeholder="Search Toy name..."
             className="input input-bordered"
+            onChange={(e) => setSearchText(e.target.value)}
           />
-          <button className="btn btn-square btn-primary">
+          <button onClick={handleSearch} className="btn btn-square btn-primary">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6"
