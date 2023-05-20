@@ -1,7 +1,9 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../../providers/AuthPorviders";
 import Swal from "sweetalert2";
+import Lottie from "lottie-react";
 
+import img from "./login.json";
 
 const Register = () => {
   const { signUp, upDateProfile } = useContext(AuthContext);
@@ -16,10 +18,10 @@ const Register = () => {
     const password = form.password.value;
     const photo = form.photo.value;
 
-    // if (!/"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"/.test(password)) {
-    //   setError("Minimum eight characters, at least one letter and one number");
-    //   return;
-    // }
+    if ( !/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password)) {
+      setError("Minimum eight characters, at least one letter and one number");
+      return;
+    }
 
     setError("");
     signUp(email, password)
@@ -42,15 +44,14 @@ const Register = () => {
     console.log(name, email, password, photo);
   };
 
-  
   return (
-    <div>
-      <h2>This is Register page</h2>
+    <div className="bg-base-150 max-w-7xl mx-auto">
+      <h1 className="text-5xl text-center font-bold mt-20">Register now!</h1>
       <div>
-        <div className="hero min-h-screen bg-base-200">
-          <div className="hero-content flex-col">
+        <div className="hero min-h-full ">
+          <div className="hero-content flex-row">
             <div className="text-center lg:text-left">
-              <h1 className="text-5xl font-bold">Register now!</h1>
+              <Lottie animationData={img}></Lottie>
             </div>
             <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
               <div className="card-body">
@@ -64,7 +65,6 @@ const Register = () => {
                       type="name"
                       name="name"
                       placeholder="name"
-                      
                       className="input input-bordered w-full"
                     />
                   </div>
@@ -108,7 +108,7 @@ const Register = () => {
                       className="input input-bordered"
                     />
                     <label className="label">
-                      <p className="label-text-alt text-xl text-red-500">
+                      <p className="label-text-alt text-sm text-red-500">
                         {error}
                       </p>
                     </label>
