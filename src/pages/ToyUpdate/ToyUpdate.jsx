@@ -19,7 +19,7 @@ const ToyUpdate = () => {
       description,
     };
 
-    fetch(`https://animal-toys-server-rosy.vercel.app/update/${id}`, {
+    fetch(`http://localhost:5000/update/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
