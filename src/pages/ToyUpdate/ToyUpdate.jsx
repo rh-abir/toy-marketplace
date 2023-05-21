@@ -86,7 +86,7 @@ const ToyUpdate = () => {
         </div>
 
         <div className="form-control mt-6">
-          <input className="btn btn-primary" type="submit" value="Update Toy" />
+          <input className="btn btn-outline btn-primary" type="submit" value="Update Toy" />
         </div>
       </form>
     </div>

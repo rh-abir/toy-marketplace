@@ -1,10 +1,10 @@
 import Marquee from "react-fast-marquee";
 
-import img1 from "../assets/img/company/brand1.png";
-import img2 from "../assets/img/company/brand2.png";
-import img3 from "../assets/img/company/brand3.png";
-import img4 from "../assets/img/company/brand4.png";
-import img5 from "../assets/img/company/brand5.png";
+import img1 from "../../../assets/img/company/brand1.png";
+import img2 from "../../../assets/img/company/brand2.png";
+import img3 from "../../../assets/img/company/brand3.png";
+import img4 from "../../../assets/img/company/brand4.png";
+import img5 from "../../../assets/img/company/brand5.png";
 
 const Company = () => {
   return (
