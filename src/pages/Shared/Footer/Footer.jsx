@@ -1,9 +1,11 @@
+import logo from "../../../assets/img/logo/logo.png";
+
 const Footer = () => {
   return (
     <div className="bg-base-200 ">
       <footer className="footer max-w-7xl mx-auto p-10 text-base-content">
         <div>
-          <img className="w-[150px]" src="./logo.png" alt="" />
+          <img className="w-[150px]" src={logo} alt="" />
           <p className="font-bold">
             Toys-house
             <br />@ 2023 rhabir authors. All rights reserved.
