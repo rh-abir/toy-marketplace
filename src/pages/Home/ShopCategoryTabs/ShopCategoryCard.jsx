@@ -16,7 +16,7 @@ const ShopCategoryCard = ({ cateoryData }) => {
     if (!user) {
       Swal.fire({
         title: "",
-        text: "You have to log in!",
+        text: "You have to log in first to view details!",
         icon: "warning",
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
