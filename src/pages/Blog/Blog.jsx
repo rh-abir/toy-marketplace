@@ -4,7 +4,7 @@ import useTitle from "../../customHook/useTitle";
 
 const Blog = () => {
 
-  useTitle('Blog-page')
+  useTitle('Blog-Page')
 
 
   return (

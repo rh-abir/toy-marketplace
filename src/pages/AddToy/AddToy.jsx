@@ -57,7 +57,7 @@ const AddToy = () => {
     console.log(addTdyInfo);
   };
 
-  useTitle("AddToy-page");
+  useTitle("AddToy-Page");
 
   return (
     <div className="card-body max-w-7xl mx-auto">

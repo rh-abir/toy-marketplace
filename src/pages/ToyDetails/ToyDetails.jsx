@@ -23,7 +23,7 @@ const ToyDetails = () => {
     toyName,
   } = loadeData;
 
-  useTitle("ToyDetails-page");
+  useTitle("ToyDetails-Page");
 
   return (
     <>

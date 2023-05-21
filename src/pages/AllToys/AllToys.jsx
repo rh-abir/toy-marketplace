@@ -33,7 +33,7 @@ const AllToys = () => {
       });
   };
 
-  useTitle("Alltoy-page");
+  useTitle("Alltoy-Page");
 
   return (
     <div className="">

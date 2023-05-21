@@ -41,7 +41,7 @@ const ToyUpdate = () => {
       });
   };
 
-  useTitle("ToyUpdate-page");
+  useTitle("ToyUpdate-Page");
 
   return (
     <div className="card-body max-w-7xl mx-auto">

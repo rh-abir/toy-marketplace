@@ -53,7 +53,7 @@ const MyToy = () => {
     });
   };
 
-  useTitle("Mytoy-page");
+  useTitle("Mytoy-Page");
 
 
 

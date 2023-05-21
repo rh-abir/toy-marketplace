@@ -1,3 +1,4 @@
+import useTitle from "../../../customHook/useTitle";
 import Banner from "../Banner/Banner";
 import Company from "../Company/Company";
 import Gallery from "../Gallery/Gallery";
@@ -6,6 +7,7 @@ import Wedo from "../Wedo/Wedo";
 
 
 const Home = () => {
+    useTitle('Home-Page')
     return (
         <div>
             <Banner></Banner>
