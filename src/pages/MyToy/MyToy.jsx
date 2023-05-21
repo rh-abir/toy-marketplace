@@ -57,9 +57,20 @@ const MyToy = () => {
 
   return (
     <>
-    <div>
-      <Banners></Banners>
-    </div>
+      <div>
+        <Banners></Banners>
+      </div>
+      <div className="flex items-center justify-end max-w-7xl space-x-5">
+        <h2>Sort By Price :</h2>
+        <div>
+          <button className="btn btn-sm btn-outline btn-warning mr-4">
+            Descending{" "}
+          </button>
+          <button className="btn btn-sm  btn-outline btn-primary">
+            Ascending{" "}
+          </button>
+        </div>
+      </div>
       <div className="max-w-7xl mx-auto mb-20">
         <div className="overflow-x-auto w-full">
           <table className="table w-full">
