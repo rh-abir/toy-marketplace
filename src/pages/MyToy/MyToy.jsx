@@ -55,18 +55,33 @@ const MyToy = () => {
 
   useTitle("Mytoy-page");
 
+
+
+  const handleDescending = (event) => {
+    console.log('click dsc', event)
+
+    fetch(`http://localhost:5000/mytoysAscDsc?email=${user?.email}&sort=${event}`)
+    .then((res) => res.json())
+    .then((data) => {
+      setMyToy(data);
+    });
+
+  }
+
+
+
   return (
     <>
       <div>
         <Banners></Banners>
       </div>
       <div className="flex items-center justify-end max-w-7xl space-x-5">
-        <h2>Sort By Price :</h2>
+        <h2 className="font-semibold">Sort By Price :</h2>
         <div>
-          <button className="btn btn-sm btn-outline btn-warning mr-4">
+          <button onClick={(e) =>handleDescending(e.target.innerText)} className="btn btn-sm btn-outline btn-warning mr-4">
             Descending{" "}
           </button>
-          <button className="btn btn-sm  btn-outline btn-primary">
+          <button onClick={(e) =>handleDescending(e.target.innerText)} className="btn btn-sm  btn-outline btn-primary">
             Ascending{" "}
           </button>
         </div>
