@@ -1,3 +1,4 @@
+import Company from "../../../Company/Company";
 import Banner from "../Banner/Banner";
 import Gallery from "../Gallery/Gallery";
 import ShopCategoryTabs from "../ShopCategoryTabs/ShopCategoryTabs";
@@ -11,6 +12,7 @@ const Home = () => {
             <Gallery></Gallery>
             <Wedo></Wedo>
             <ShopCategoryTabs></ShopCategoryTabs>
+            <Company></Company>
         </div>
     );
 };

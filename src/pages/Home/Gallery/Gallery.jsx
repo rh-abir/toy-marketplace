@@ -11,37 +11,40 @@ import img10 from "../../../assets/img/gallery-img/gallery10.jpg";
 const Gallery = () => {
   return (
     <div className="max-w-7xl mx-auto">
-      <h2>This is Gallery</h2>
-      <div className="grid grid-cols-2 gap-5">
+      <div className="text-center mb-20 mt-28">
+        <h2 className="text-5xl mb-3"> Gallery Collection</h2>
+        <p>Add featured Gallery to weekly lineup</p>
+      </div>
+      <div className="grid lg:grid-cols-2 gap-5 bg-[#F2F2F2] p-8 rounded-3xl">
         <div className="">
           <img className="rounded-2xl w-[100%]" src={img3} alt="" />
         </div>
-        <div className="grid grid-cols-2 gap-5">
+        <div className="grid  lg:grid-cols-2 gap-5">
           <div>
-            <img className="w-[100%] " src={img2} alt="" />
+            <img className="w-[100%] rounded-md" src={img2} alt="" />
           </div>
           <div>
-            <img className="w-[100%]" src={img1} alt="" />
+            <img className="w-[100%] rounded-md" src={img1} alt="" />
           </div>
           <div>
-            <img className="w-[100%]" src={img4} alt="" />
+            <img className="w-[100%] rounded-md" src={img4} alt="" />
           </div>
           <div>
-            <img className="w-[100%]" src={img5} alt="" />
+            <img className="w-[100%] rounded-md" src={img5} alt="" />
           </div>
         </div>
-        <div className="grid grid-cols-2">
+        <div className="grid lg:grid-cols-2 gap-5">
           <div>
-            <img className="w-[100%]" src={img6} alt="" />
+            <img className="w-[100%] rounded-md" src={img6} alt="" />
           </div>
           <div>
-            <img className="w-[100%]" src={img7} alt="" />
+            <img className="w-[100%] rounded-md" src={img7} alt="" />
           </div>
           <div>
-            <img className="w-[100%]" src={img8} alt="" />
+            <img className="w-[100%] rounded-md" src={img8} alt="" />
           </div>
           <div>
-            <img className="w-[100%]" src={img9} alt="" />
+            <img className="w-[100%] rounded-md" src={img9} alt="" />
           </div>
         </div>
         <div>
