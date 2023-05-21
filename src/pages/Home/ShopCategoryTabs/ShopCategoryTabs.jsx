@@ -11,7 +11,17 @@ const ShopCategoryTabs = () => {
     fetch(`https://animal-toys-server-rosy.vercel.app/category/cat`)
     .then(res => res.json())
     .then(data => {
-        setCategoryData(data)
+        // setCategoryData(data)
+
+        if (data.length > 3) {
+          // console.log(data.length)
+          let miniData = data.slice(0, 3);
+          setCategoryData(miniData);
+        }
+        else{
+          setCategoryData(data);
+        }
+
     })
   }, [])
 
@@ -24,7 +34,17 @@ const ShopCategoryTabs = () => {
       .then((res) => res.json())
       .then((data) => {
         // console.log(data)
-        setCategoryData(data);
+        // setCategoryData(data);
+
+        if (data.length > 3) {
+          // console.log(data.length)
+          let miniData = data.slice(0, 3);
+          setCategoryData(miniData);
+        }
+        else{
+          setCategoryData(data);
+        }
+
       });
   };
 
@@ -56,7 +76,7 @@ const ShopCategoryTabs = () => {
           </div>
         </TabPanel>
         <TabPanel>
-        <div className="flex md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {categoryDatas?.map((cateoryData) => (
               <ShopCategoryCard
                 key={cateoryData._id}
@@ -66,7 +86,7 @@ const ShopCategoryTabs = () => {
           </div>
         </TabPanel>
         <TabPanel>
-        <div className="flex md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {categoryDatas?.map((cateoryData) => (
               <ShopCategoryCard
                 key={cateoryData._id}
@@ -76,7 +96,7 @@ const ShopCategoryTabs = () => {
           </div>
         </TabPanel>
         <TabPanel>
-        <div className="flex md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {categoryDatas?.map((cateoryData) => (
               <ShopCategoryCard
                 key={cateoryData._id}
@@ -86,7 +106,7 @@ const ShopCategoryTabs = () => {
           </div>
         </TabPanel>
         <TabPanel>
-        <div className="flex md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {categoryDatas?.map((cateoryData) => (
               <ShopCategoryCard
                 key={cateoryData._id}
