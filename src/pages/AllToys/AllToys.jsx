@@ -6,15 +6,16 @@ import useTitle from "../../customHook/useTitle";
 const AllToys = () => {
   const [alltoys, setAlltoys] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/alltoysData")
+    fetch("https://animal-toys-server-rosy.vercel.app/alltoysData")
       .then((res) => res.json())
       .then((data) => {
         if (data.length > 20) {
-          const miniData = data.slice(0, 20);
+          // console.log(data.length)
+          let miniData = data.slice(0, 20);
           setAlltoys(miniData);
         }
 
-        console.log(data);
+        setAlltoys(data);
       });
   }, []);
 
@@ -23,7 +24,7 @@ const AllToys = () => {
   const [searchText, setSearchText] = useState("");
 
   const handleSearch = () => {
-    fetch(`http://localhost:5000/toySearchByName/${searchText}`)
+    fetch(`https://animal-toys-server-rosy.vercel.app/toySearchByName/${searchText}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
