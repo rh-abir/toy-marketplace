@@ -17,6 +17,7 @@ const AddToy = () => {
     const photoUrl = form.photoUrl.value;
     const category = form.category.value;
     const Price = form.price.value;
+    const priceNum = parseFloat(Price)
     const rating = form.rating.value;
     const quantity = form.quantity.value;
     const description = form.description.value;
@@ -27,7 +28,7 @@ const AddToy = () => {
       toyName,
       photoUrl,
       category,
-      Price,
+      priceNum,
       rating,
       quantity,
       description,
