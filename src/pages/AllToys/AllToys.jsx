@@ -14,8 +14,9 @@ const AllToys = () => {
           let miniData = data.slice(0, 20);
           setAlltoys(miniData);
         }
-
-        setAlltoys(data);
+        else{
+          setAlltoys(data);
+        }
       });
   }, []);
 
