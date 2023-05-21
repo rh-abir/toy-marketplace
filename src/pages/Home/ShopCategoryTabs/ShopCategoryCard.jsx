@@ -2,16 +2,38 @@ import Rating from "react-rating";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthPorviders";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const ShopCategoryCard = ({ cateoryData }) => {
-
   const { user } = useContext(AuthContext);
 
-  console.log(user)
+  console.log(user);
 
   console.log(cateoryData);
-  const { photoUrl, Price, toyName, rating, _id} = cateoryData;
+  const { photoUrl, Price, toyName, rating, _id } = cateoryData;
+
+
+  const navigate = useNavigate()
+
+
+  const handleIsLogin = () => {
+    if (!user) {
+      Swal.fire({
+        title: "",
+        text: "You have to log in first to view details!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Ok !",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          navigate('/login')
+        }
+      });
+    }
+  };
 
   return (
     <div>
@@ -33,7 +55,14 @@ const ShopCategoryCard = ({ cateoryData }) => {
             </p>
           </div>
           <div className="card-actions justify-end">
-            <button className="btn btn-primary"><Link to={`toydetails/${_id}`}>View Details</Link></button>
+
+
+             <button  className="btn btn-outline btn-primary">
+              <Link to={`toydetails/${_id}`}>View Details</Link>
+            </button> 
+
+
+
           </div>
         </div>
       </div>

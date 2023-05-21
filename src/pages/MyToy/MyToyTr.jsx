@@ -32,8 +32,8 @@ const MyToyTr = ({ handleDelete, toydata }) => {
         </td>
         <td> Quantity: {quantity}</td>
         <th>
-          <button className="btn btn-ghost btn-xs"><Link to={`/toyupdate/${_id}`}>Update</Link></button>
-          <button onClick={() => handleDelete(_id)} className="btn btn-ghost btn-xs">Delete</button>
+          <button className="btn btn-xs btn-outline btn-info mr-3"><Link to={`/toyupdate/${_id}`}>Update</Link></button>
+          <button onClick={() => handleDelete(_id)} className="btn  btn-xs btn-outline btn-error">Delete</button>
         </th>
       </tr>
     </>

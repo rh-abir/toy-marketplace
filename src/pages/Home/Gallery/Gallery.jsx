@@ -15,9 +15,9 @@ const Gallery = () => {
         <h2 className="text-5xl mb-3"> Gallery Collection</h2>
         <p>Add featured Gallery to weekly lineup</p>
       </div>
-      <div className="grid lg:grid-cols-2 gap-5 bg-[#F2F2F2] p-8 rounded-3xl">
-        <div className="">
-          <img className="rounded-2xl w-[100%]" src={img3} alt="" />
+      <div className="grid lg:grid-cols-2 gap-5 bg-[#F2F2F2] p-5 rounded-3xl">
+        <div className="h-[300px]">
+          <img className="rounded-2xl  w-[100%]" src={img3} alt="" />
         </div>
         <div className="grid lg:grid-cols-2 gap-5">
           <div>

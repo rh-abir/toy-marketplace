@@ -3,6 +3,7 @@ import { AuthContext } from "../../providers/AuthPorviders";
 import MyToyTr from "./MyToyTr";
 import Swal from "sweetalert2";
 import useTitle from "../../customHook/useTitle";
+import Banners from "../Shared/Banners/Banners";
 
 const MyToy = () => {
   const { user } = useContext(AuthContext);
@@ -55,22 +56,27 @@ const MyToy = () => {
   useTitle("Mytoy-page");
 
   return (
-    <div className="max-w-7xl mx-auto">
-      <div className="overflow-x-auto w-full">
-        <table className="table w-full">
-          <tbody>
-            {/* row 1 */}
-            {myToys.map((toydata) => (
-              <MyToyTr
-                key={toydata._id}
-                toydata={toydata}
-                handleDelete={handleDelete}
-              ></MyToyTr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+    <>
+    <div>
+      <Banners></Banners>
     </div>
+      <div className="max-w-7xl mx-auto mb-20">
+        <div className="overflow-x-auto w-full">
+          <table className="table w-full">
+            <tbody>
+              {/* row 1 */}
+              {myToys.map((toydata) => (
+                <MyToyTr
+                  key={toydata._id}
+                  toydata={toydata}
+                  handleDelete={handleDelete}
+                ></MyToyTr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </>
   );
 };
 
