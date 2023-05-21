@@ -11,7 +11,7 @@ const MyToy = () => {
   const [myToys, setMyToy] = useState([]);
   //   console.log(user);
 
-  const url = `http://localhost:5000/mytoys?email=${user?.email}`;
+  const url = `https://animal-toys-server-rosy.vercel.app/mytoys?email=${user?.email}`;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
@@ -38,7 +38,7 @@ const MyToy = () => {
       if (result.isConfirmed) {
         Swal.fire("Deleted!", "Your file has been deleted.", "success");
 
-        fetch(`http://localhost:5000/deletetoy/${id}`, {
+        fetch(`https://animal-toys-server-rosy.vercel.app/deletetoy/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

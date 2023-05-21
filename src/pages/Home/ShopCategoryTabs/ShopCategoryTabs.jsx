@@ -8,7 +8,7 @@ const ShopCategoryTabs = () => {
 
 
   useEffect(()=> {
-    fetch(`http://localhost:5000/category/cat`)
+    fetch(`https://animal-toys-server-rosy.vercel.app/category/cat`)
     .then(res => res.json())
     .then(data => {
         setCategoryData(data)
@@ -20,7 +20,7 @@ const ShopCategoryTabs = () => {
     const category = event.target.innerText.toLowerCase();
     console.log(category);
 
-    fetch(`http://localhost:5000/category/${category}`)
+    fetch(`https://animal-toys-server-rosy.vercel.app/category/${category}`)
       .then((res) => res.json())
       .then((data) => {
         // console.log(data)
