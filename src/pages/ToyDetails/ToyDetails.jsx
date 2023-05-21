@@ -12,7 +12,7 @@ const ToyDetails = () => {
   console.log(loadeData);
 
   const {
-    Price,
+    priceNum,
     category,
     description,
     photoUrl,
@@ -42,7 +42,7 @@ const ToyDetails = () => {
               <p className="">Seller Email: {sellerEmail}</p>
 
               <div className="flex gap-4">
-                <p className="font-semibold">Price: ${Price}</p>
+                <p className="font-semibold">Price: ${priceNum}</p>
                 <p className="font-semibold">Category : {category}</p>
                 <p className="font-semibold">Quantity: {quantity}</p>
                 <p className="text-yellow-700">

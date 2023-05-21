@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const MyToyTr = ({ handleDelete, toydata }) => {
 //   console.log(toydata);
 
-  const { description, photoUrl, quantity, toyName, _id, Price } = toydata;
+  const { description, photoUrl, quantity, toyName, _id, priceNum } = toydata;
 
   return (
     <>
@@ -24,7 +24,7 @@ const MyToyTr = ({ handleDelete, toydata }) => {
             </div>
           </div>
         </td>
-        <td>Price: ${Price}</td>
+        <td>Price: ${priceNum}</td>
         <td>
           <span className="badge badge-ghost badge-sm">
             {description}

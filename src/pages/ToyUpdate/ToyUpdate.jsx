@@ -10,11 +10,12 @@ const ToyUpdate = () => {
 
     const form = event.target;
     const Price = form.price.value;
+    const priceNum = parseFloat(Price)
     const quantity = form.quantity.value;
     const description = form.description.value;
 
     const updateToyInfo = {
-      Price,
+      priceNum,
       quantity,
       description,
     };

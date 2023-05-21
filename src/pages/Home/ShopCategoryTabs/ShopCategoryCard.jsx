@@ -8,7 +8,7 @@ import Swal from "sweetalert2";
 const ShopCategoryCard = ({ cateoryData }) => {
   const { user } = useContext(AuthContext);
 
-  const { photoUrl, Price, toyName, rating, _id } = cateoryData;
+  const { photoUrl, priceNum, toyName, rating, _id } = cateoryData;
 
   const navigate = useNavigate();
 
@@ -40,7 +40,7 @@ const ShopCategoryCard = ({ cateoryData }) => {
         <div className="card-body">
           <h2 className="card-title">{toyName}</h2>
           <div className="">
-            <p>Price : ${Price}</p>
+            <p>Price : ${priceNum}</p>
             <p className="text-yellow-700">
               <Rating
                 initialRating={rating}
