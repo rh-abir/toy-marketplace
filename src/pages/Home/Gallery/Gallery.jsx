@@ -19,7 +19,7 @@ const Gallery = () => {
         <div className="">
           <img className="rounded-2xl w-[100%]" src={img3} alt="" />
         </div>
-        <div className="grid  lg:grid-cols-2 gap-5">
+        <div className="grid lg:grid-cols-2 gap-5">
           <div>
             <img className="w-[100%] rounded-md" src={img2} alt="" />
           </div>
